@@ -434,103 +434,132 @@ aria-label="Close dialog window"
 #rec431913407 .t-popup__close-icon g {
 fill: #ffffff !important;
 }
-}</style><div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" id="popuptitle_431913407">BECOME A LABEL ARTIST</div><div class="t702__descr t-descr t-descr_xs">XLD Music LTD is looking for talented artists!</div></div> <form 
-id="form431913407" name='form431913407' role="form" action='#' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" 
-class="t-form js-form-proccess t-form_inputs-total_6 " data-success-callback="t702_onSuccess" ><input type="hidden" name="formservices[]" value="786039c3f2c43e2d82cc2cb96a1c8088" class="js-formaction-services"><input type="hidden" name="formservices[]" value="7af387fca41a5d8af7b95c00100623f4" class="js-formaction-services"><input type="hidden" name="formservices[]" value="d0b0d778ecb78f26ae822a056360e28c" class="js-formaction-services"><input type="hidden" name="tildaspec-formname" tabindex="-1" value="Music Demos"><div class="js-successbox t-form__successbox t-text t-text_md" 
-aria-live="polite" 
-style="display:none;" data-success-message="Thank you! You have submit successfully!" ></div><div class="t-form__inputsbox t-form__inputsbox_vertical-form t-form__inputsbox_inrow"><div
-class="t-input-group t-input-group_nm " data-input-lid="1495810354468" data-field-type="nm"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><input type="text"
-autocomplete="name"
-name="Name"
-id="input_1495810354468"
-class="t-input js-tilda-rule "
-value=""
-placeholder="Full Name" data-tilda-req="1" aria-required="true" data-tilda-rule="name"
-aria-describedby="error_1495810354468"
-style="color:#000000;border:1px solid #c9c9c9;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><div class="t-input-error" aria-live="polite" id="error_1495810354468"></div></div></div><div
-class="t-input-group t-input-group_em " data-input-lid="1495810359387" data-field-type="em"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><input type="email"
-autocomplete="email"
-name="Email"
-id="input_1495810359387"
-class="t-input js-tilda-rule "
-value=""
-placeholder="Email" data-tilda-req="1" aria-required="true" data-tilda-rule="email"
-aria-describedby="error_1495810359387"
-style="color:#000000;border:1px solid #c9c9c9;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"
-><div class="t-input-error" aria-live="polite" id="error_1495810359387"></div></div></div><div
-class="t-input-group t-input-group_ph " data-input-lid="1495810410810" data-field-type="ph"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><input type="tel"
-autocomplete="tel"
-name="Phone"
-id="input_1495810410810" data-phonemask-init="no" data-phonemask-id="431913407" data-phonemask-lid="1495810410810" data-phonemask-maskcountry="AZ" class="t-input js-phonemask-input js-tilda-rule "
-value=""
-placeholder="+1(999)999-9999" data-tilda-req="1" aria-required="true" aria-describedby="error_1495810410810"
-style="color:#000000;border:1px solid #c9c9c9;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"
-><script type="text/javascript">if (! document.getElementById('t-phonemask-script')) {
-(function (d, w, o) {
-var n=d.getElementsByTagName(o)[0],s=d.createElement(o),f=function(){n.parentNode.insertBefore(s,n);};
-s.type = "text/javascript";
-s.async = true;
-s.id = 't-phonemask-script';
-s.src="../static.tildacdn.one/js/tilda-phone-mask-1.1.min.js";
-if (w.opera=="[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);} else { f(); }
-})(document, window, 'script');
-} else {
-t_onReady(function () {
-t_onFuncLoad('t_form_phonemask_load', function () {
-var phoneMasks = document.querySelectorAll('#rec431913407 [data-phonemask-lid="1495810410810"]');
-t_form_phonemask_load(phoneMasks);
+}</style><div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" id="popuptitle_431913407">BECOME A LABEL ARTIST</div><div class="t702__descr t-descr t-descr_xs">XLD Music LTD is looking for talented artists!</div></div> 
+
+<style>
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+}
+</style>
+<div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" id="popuptitle_431913407">BECOME A LABEL ARTIST</div><div class="t702__descr t-descr t-descr_xs">XLD Music LTD is looking for talented artists!</div></div>  id="form431913407" action="submit-handler.php" method="POST">
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Email" required>
+
+<!-- Phone Number with Country Code Selection -->
+<div class="phone-container" style="display: flex; align-items: center;">
+    <select name="CountryCode" id="countryCode" required style="width: 30%; padding: 12px;">
+        <option value="+90">+90 (Turkey)</option>
+        <option value="+994">+994 (Azerbaijan)</opti<formon>
+        <option value="+7">+7 (Russia)</option>
+        <option value="+49">+49 (Germany)</option>
+        <option value="+1">+1 (USA)</option>
+        <!-- Add more countries as needed -->
+    </select>
+    <input type="tel" name="Phone" placeholder="Phone Number" required style="flex: 1; margin-left: 10px;">
+</div>
+
+<input type="url" name="Instagram" placeholder="Instagram profile" required>
+<textarea name="About" placeholder="About yourself" required></textarea>
+<input type="url" name="DemoLink" placeholder="Link to listening to demo" required>
+<button type="submit">Submit</button>
+</form>
+
+
+<script>
+// Form submit event handler
+document.getElementById('form431913407').addEventListener('submit', async function (e) {
+e.preventDefault(); // Varsayılan form gönderimini engelle
+
+// Form verilerini topla
+const formData = new FormData(this);
+const data = Object.fromEntries(formData.entries()); // JSON formatına dönüştür
+
+try {
+  // API'ye gönder
+  const response = await fetch('https://key.xld.com.tr/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  
+  if (response.ok) {
+    alert('Form submitted successfully!');
+    this.reset(); // Formu sıfırla
+  } else {
+    const error = await response.text();
+    alert(`Error: ${error}`);
+  }
+} catch (err) {
+  console.error('Submission failed:', err);
+  alert('An error occurred. Please try again.');
+}
 });
-});
-}</script><div class="t-input-error" aria-live="polite" id="error_1495810410810"></div></div></div><div
-class="t-input-group t-input-group_ur " data-input-lid="1649146978105" data-field-type="ur"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><input
-type="text"
-name="Url"
-id="input_1649146978105"
-class="t-input js-tilda-rule "
-value=""
-placeholder="Instagram profile" data-tilda-req="1" aria-required="true" data-tilda-rule="url"
-style="color:#000000;border:1px solid #c9c9c9;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"
-><div class="t-input-error" aria-live="polite" id="error_1649146978105"></div></div></div><div
-class="t-input-group t-input-group_ta " data-input-lid="1649147153553" data-field-type="ta"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><textarea name="Textarea"
-id="input_1649147153553"
-class="t-input js-tilda-rule "
-placeholder="About yourself" data-tilda-req="1" aria-required="true" aria-describedby="error_1649147153553"
-style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;height:170px;" rows="5"></textarea><div class="t-input-error" aria-live="polite" id="error_1649147153553"></div></div></div><div
-class="t-input-group t-input-group_ur " data-input-lid="1649147285651" data-field-type="ur"
-><div class="t-input-block " style="border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"><input
-type="text"
-name="Url_2"
-id="input_1649147285651"
-class="t-input js-tilda-rule "
-value=""
-placeholder="Link to listening to demo" data-tilda-req="1" aria-required="true" data-tilda-rule="url"
-style="color:#000000;border:1px solid #c9c9c9;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;"
-><div class="t-input-error" aria-live="polite" id="error_1649147285651"></div></div></div><div class="t-form__errorbox-middle"><!--noindex--><div 
-class="js-errorbox-all t-form__errorbox-wrapper" 
-style="display:none;" data-nosnippet 
-tabindex="-1" 
-aria-label="Form fill-in errors"
-><ul 
-role="list" 
-class="t-form__errorbox-text t-text t-text_md"
-><li class="t-form__errorbox-item js-rule-error js-rule-error-all"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-req"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-email"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-name"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-phone"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-string"></li></ul></div><!--/noindex--> </div><div class="t-form__submit"><button
-type="submit"
-class="t-submit"
-style="color:#ffffff;background-color:#000000;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;" data-field="buttontitle" data-buttonfieldset="button"
->Submit </button></div></div><div class="t-form__errorbox-bottom"><!--noindex--><div 
-class="js-errorbox-all t-form__errorbox-wrapper" 
-style="display:none;" data-nosnippet 
-tabindex="-1" 
-aria-label="Form fill-in errors"
-><ul 
-role="list" 
-class="t-form__errorbox-text t-text t-text_md"
-><li class="t-form__errorbox-item js-rule-error js-rule-error-all"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-req"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-email"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-name"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-phone"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></li><li class="t-form__errorbox-item js-rule-error js-rule-error-string"></li></ul></div><!--/noindex--> </div></form><style>#rec431913407 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
+</script>
+
+
+<style>#rec431913407 input::-webkit-input-placeholder {color:#000000; opacity: 0.5;}
 #rec431913407 input::-moz-placeholder {color:#000000; opacity: 0.5;}
 #rec431913407 input:-moz-placeholder {color:#000000; opacity: 0.5;}
 #rec431913407 input:-ms-input-placeholder {color:#000000; opacity: 0.5;}
@@ -960,13 +989,13 @@ class="t972__btn t972__btn-primary t972__accept-btn t-btn t-btn_md"
 style="font-family:Arial;color:#ffffff;background-color:#000000;" data-buttonfieldset="button">Accept All</button><button type="button" 
 class="t972__btn t972__btn-secondary t972__settings-btn t-btn t-btn_md" 
 style="font-family:Arial;color:#000000;">Cookie Settings</button></div></div><div class="t972__settings" style="background-color:#fff; border-radius:5px;"><div class="t972__settings-header t-text t-text_xs t-text_weight_plus" style="background-color:#fff; "><svg role="presentation" xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none"
-class="t972__settings-arrow"><g opacity="0.5"><line x1="19" y1="7" x2="1" y2="7" stroke="black" /><path d="M7.2069 1L1 6.89655L7.2069 12.7931" stroke="black" /></g></svg><span field="title" class="t-name_xs" style="font-family:Arial;">Cookies managing</span></div><div class="t972__settings-body"><div class="t972__settings-title t-name t-name_lg" style="font-family:Arial;" field="title1">Cookie Settings</div><div class="t972__settings-text t-descr t-descr_xs" style="font-family:Arial;" field="text1">Cookies necessary for the correct operation of the site are always enabled.<br />Other cookies are configurable.</div><form class="t972__categories"><div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Essential cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t972__category-enabled js_always-enabled t-text t-text_xs"></span></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">Always On. These cookies are essential so that you can use the website and use its functions. They cannot be turned off. They're set in response to requests made by you, such as setting your privacy preferences, logging in or filling in forms.</div></div> <div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Analytics cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t-text t-text_xs">Disabled</span><label class="t972__toggle-label"><input class="t972__toggle-input" name="cookie_type" value="analytics" type="checkbox"><div class="t972__toggle-container"><div class="t972__toggle-background"></div><div class="t972__toggle-mark"></div></div></label></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">These cookies collect information to help us understand how our Websites are being used or how effective our marketing campaigns are, or to help us customise our Websites for you. See a list of the analytics cookies we use here.</div></div> <div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Advertising cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t-text t-text_xs">Disabled</span><label class="t972__toggle-label"><input class="t972__toggle-input" name="cookie_type" value="advertising" type="checkbox"><div class="t972__toggle-container"><div class="t972__toggle-background"></div><div class="t972__toggle-mark"></div></div></label></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">These cookies provide advertising companies with information about your online activity to help them deliver more relevant online advertising to you or to limit how many times you see an ad. This information may be shared with other advertising companies. See a list of the advertising cookies we use here.</div></div> </form></div><div class="t972__settings-footer" style="background-color:#fff; "><button type="button" 
+class="t972__settings-arrow"><g opacity="0.5"><line x1="19" y1="7" x2="1" y2="7" stroke="black" /><path d="M7.2069 1L1 6.89655L7.2069 12.7931" stroke="black" /></g></svg><span field="title" class="t-name_xs" style="font-family:Arial;">Cookies managing</span></div><div class="t972__settings-body"><div class="t972__settings-title t-name t-name_lg" style="font-family:Arial;" field="title1">Cookie Settings</div><div class="t972__settings-text t-descr t-descr_xs" style="font-family:Arial;" field="text1">Cookies necessary for the correct operation of the site are always enabled.<br />Other cookies are configurable.</div> class="t972__categories"><div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Essential cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t972__category-enabled js_always-enabled t-text t-text_xs"></span></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">Always On. These cookies are essential so that you can use the website and use its functions. They cannot be turned off. They're set in response to requests made by you, such as setting your privacy preferences, logging in or filling in forms.</div></div> <div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Analytics cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t-text t-text_xs">Disabled</span><label class="t972__toggle-label"><input class="t972__toggle-input" name="cookie_type" value="analytics" type="checkbox"><div class="t972__toggle-container"><div class="t972__toggle-background"></div><div class="t972__toggle-mark"></div></div></label></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">These cookies collect information to help us understand how our Websites are being used or how effective our marketing campaigns are, or to help us customise our Websites for you. See a list of the analytics cookies we use here.</div></div> <div class="t972__category"><div class="t972__category-header"><div class="t972__category-btn"><div class="t972__line t972__line_vertical" style="background-color:#000;"></div><div class="t972__line t972__line_horizontal" style="background-color:#000;"></div></div><div class="t972__category-title t-name t-name_xs" style="font-family:Arial;">Advertising cookies</div></div><div class="t972__category-toggle"><span class="t972__toggle-txt t-text t-text_xs">Disabled</span><label class="t972__toggle-label"><input class="t972__toggle-input" name="cookie_type" value="advertising" type="checkbox"><div class="t972__toggle-container"><div class="t972__toggle-background"></div><div class="t972__toggle-mark"></div></div></label></div><div class="t972__category-body t-descr t-descr_xxs" style="font-family:Arial;">These cookies provide advertising companies with information about your online activity to help them deliver more relevant online advertising to you or to limit how many times you see an ad. This information may be shared with other advertising companies. See a list of the advertising cookies we use here.</div></div> </form></div><div class="t972__settings-footer" style="background-color:#fff; "><button type="button" 
 class="t972__btn t972__btn-primary t972__confirm-btn t-btn t-btn_md" 
 style="font-family:Arial;color:#ffffff;background-color:#000000;" data-buttonfieldset="button3">Confirm</button></div></div></div><script>t_onReady(function () {
 setTimeout(function () {
 t_onFuncLoad('t972_init', function () {
 t972_init('431992945');
-});
+});<form
 }, 500);
 });</script><style>#rec431992945 .t-btn.t972__btn-secondary:hover {
 background-color: transparent !important;
