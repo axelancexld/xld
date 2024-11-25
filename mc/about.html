@@ -288,92 +288,107 @@ aria-label="Close dialog window"
 #rec431913407 .t-popup__close-icon g {
 fill: #ffffff !important;
 }
-}</style><div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" id="popuptitle_431913407">BECOME A LABEL ARTIST</div><div class="t702__descr t-descr t-descr_xs">XLD Music LTD is looking for talented artists!</div></div> <form 
-  id="form431913407" 
-  name="form431913407" 
-  role="form" 
-  action="#" 
-  method="POST" 
-  class="t-form js-form-proccess t-form_inputs-total_6"
->
-  <input type="hidden" name="formservices[]" value="786039c3f2c43e2d82cc2cb96a1c8088">
-  <input type="hidden" name="formservices[]" value="7af387fca41a5d8af7b95c00100623f4">
-  <input type="hidden" name="formservices[]" value="d0b0d778ecb78f26ae822a056360e28c">
-  <input type="hidden" name="tildaspec-formname" value="Music Demos">
-  
-  <div class="t-form__inputsbox">
-    <div class="t-input-group">
-      <input 
-        type="text" 
-        name="Name" 
-        id="input_1495810354468" 
-        class="t-input" 
-        placeholder="Full Name" 
-        required
-      >
-    </div>
-    <div class="t-input-group">
-      <input 
-        type="email" 
-        name="Email" 
-        id="input_1495810359387" 
-        class="t-input" 
-        placeholder="Email" 
-        required
-      >
-    </div>
-    <div class="t-input-group">
-      <input 
-        type="tel" 
-        name="Phone" 
-        id="input_1495810410810" 
-        class="t-input" 
-        placeholder="+1(999)999-9999" 
-        required
-      >
-    </div>
-    <div class="t-input-group">
-      <input 
-        type="text" 
-        name="Url" 
-        id="input_1649146978105" 
-        class="t-input" 
-        placeholder="Instagram Profile" 
-        required
-      >
-    </div>
-    <div class="t-input-group">
-      <textarea 
-        name="Textarea" 
-        id="input_1649147153553" 
-        class="t-input" 
-        placeholder="About yourself" 
-        rows="5" 
-        required
-      ></textarea>
-    </div>
-    <div class="t-input-group">
-      <input 
-        type="text" 
-        name="Url_2" 
-        id="input_1649147285651" 
-        class="t-input" 
-        placeholder="Link to listening to demo" 
-        required
-      >
-    </div>
-  </div>
+}</style>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fc;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-  <div class="t-form__submit">
-    <button 
-      type="submit" 
-      class="t-submit" 
-      style="color:#ffffff;background-color:#000000;border-radius:5px;"
-    >
-      Submit
-    </button>
-  </div>
+    .form-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea {
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    @media (max-width: 600px) {
+        .form-container {
+            padding: 20px;
+            width: 90%;
+        }
+    }
+</style>
+<div class="t-popup__container t-width t-width_6"><div class="t702__wrapper"><div class="t702__text-wrapper t-align_center"><div class="t702__title t-title t-title_xxs" id="popuptitle_431913407">BECOME A LABEL ARTIST</div><div class="t702__descr t-descr t-descr_xs">XLD Music LTD is looking for talented artists!</div></div> <form id="form431913407" action="submit-handler.php" method="POST">
+    <input type="text" name="Name" placeholder="Full Name" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    
+    <!-- Phone Number with Country Code Selection -->
+    <div class="phone-container" style="display: flex; align-items: center;">
+        <select name="CountryCode" id="countryCode" required style="width: 30%; padding: 12px;">
+            <option value="+90">+90 (Turkey)</option>
+            <option value="+994">+994 (Azerbaijan)</option>
+            <option value="+7">+7 (Russia)</option>
+            <option value="+49">+49 (Germany)</option>
+            <option value="+1">+1 (USA)</option>
+            <!-- Add more countries as needed -->
+        </select>
+        <input type="tel" name="Phone" placeholder="Phone Number" required style="flex: 1; margin-left: 10px;">
+    </div>
+
+    <input type="url" name="Instagram" placeholder="Instagram profile" required>
+    <textarea name="About" placeholder="About yourself" required></textarea>
+    <input type="url" name="DemoLink" placeholder="Link to listening to demo" required>
+    <button type="submit">Submit</button>
 </form>
+
 
 <script>
   // Form submit event handler
