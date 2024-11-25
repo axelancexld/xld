@@ -1,6 +1,6 @@
 <?php
 // API bağlantı bilgileri
-$apiUrl = "http://185.254.28.96:3010/submit"; // Hedef API URL'si
+$apiUrl = "https://key.xld.com.tr/submit"; // Hedef API URL'si
 $apiToken = "YOUR_API_TOKEN"; // (Gerekirse) API anahtarı
 
 // Formdan gelen verileri alın ve güvenlik kontrolleri yapın
