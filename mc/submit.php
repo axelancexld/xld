@@ -1,69 +1,50 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Formdan gelen verileri al
-    $topic = $_POST['Selectbox'] ?? '';
-    $name = $_POST['Name'] ?? '';
-    $email = $_POST['Email'] ?? '';
-    $phone = $_POST['Phone'] ?? '';
-    $comments = $_POST['Textarea'] ?? '';
-
-    // Discord Webhook URL
-    $webhookUrl = 'https://canary.discord.com/api/webhooks/1310965451039309935/95GdhuStmM2DO1RHM2HScRHSO6ze_Ycg16c4cSj-xDF9LvQ7KjlWu_K-qfHAuOn-ZHdc';
-
-    // Discord Embed formatı
-    $embed = [
-        "embeds" => [
-            [
-                "title" => "📩 New Form Submission",
-                "description" => "**Topic:** $topic\n**Comments:**\n$comments",
-                "color" => 0x00ff00, // Embed rengi (yeşil)
-                "fields" => [
-                    [
-                        "name" => "👤 Name",
-                        "value" => $name,
-                        "inline" => true
-                    ],
-                    [
-                        "name" => "📧 Email",
-                        "value" => $email,
-                        "inline" => true
-                    ],
-                    [
-                        "name" => "📞 Phone",
-                        "value" => $phone,
-                        "inline" => true
-                    ],
-                ],
-                "footer" => [
-                    "text" => "Submission received on " . date('Y-m-d H:i:s')
-                ]
-            ]
-        ]
-    ];
-
-    // JSON verisini oluştur
-    $payload = json_encode($embed);
-
-    // Webhook isteğini gönder
-    $ch = curl_init($webhookUrl);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    curl_close($ch);
-
-    if ($httpCode === 204) {
-        // Discord'a başarıyla gönderildi
-        echo "Your message has been sent successfully!";
-    } else {
-        // Hata varsa logla
-        echo "Error sending to Discord. HTTP Code: $httpCode\n";
-        echo "Response: $response";
+    // API bağlantı bilgileri
+    $apiUrl = "https://key.xld.com.tr/submit2"; // Hedef API URL'si
+    $apiToken = "YOUR_API_TOKEN"; // (Gerekirse) API anahtarı
+    
+    // Formdan gelen verileri alın ve güvenlik kontrolleri yapın
+    $selectbox = htmlspecialchars($_POST['Selectbox'] ?? '');
+    $name = htmlspecialchars($_POST['Name'] ?? '');
+    $email = htmlspecialchars($_POST['Email'] ?? '');
+    $phone = htmlspecialchars($_POST['Phone'] ?? '');
+    $textarea = htmlspecialchars($_POST['Textarea'] ?? '');
+    
+    // Eksik bilgi kontrolü
+    if (empty($name) || empty($email) || empty($phone) || empty($selectbox) || empty($textarea)) {
+        die("Eksik bilgiler mevcut! Lütfen tüm alanları doldurun.");
     }
-} else {
-    echo "Invalid request method!";
-}
+    
+    // API'ye göndermek için JSON formatında veri hazırlayın
+    $data = [
+        'selectbox' => $selectbox,
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'textarea' => $textarea
+    ];
+    
+    // Curl ile API isteği gönderin
+    $ch = curl_init($apiUrl);
+    
+    // Curl ayarları
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); // JSON verisi gönderiliyor
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json', // JSON başlığı
+        'Authorization: Bearer ' . $apiToken // Eğer API anahtarı gerekiyorsa
+    ]);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Yanıtı döndür
+    
+    // İstek gönder ve yanıtı al
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // HTTP yanıt kodu
+    curl_close($ch);
+    
+    // API yanıtını kontrol edin ve kullanıcıya mesaj verin
+    if ($httpCode === 200) {
+        echo "Form başarıyla gönderildi!";
+    } else {
+        echo "Bir hata oluştu: HTTP Kodu $httpCode, Yanıt: $response";
+    }
+    ?>
